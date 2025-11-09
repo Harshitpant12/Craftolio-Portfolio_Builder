@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Builder</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- control bar -->
+
+    <nav
+      class="sticky top-0 z-50 bg-slate-950 text-gray-200 flex justify-between items-center p-6 text-xl font-bold"
+    >
+      <h1><a href="./index.html">Portfolio</a></h1>
+      <ul
+        class="space-x-12 pl-4 pr-4 flex justify-between items-center cursor-pointer"
+      >
+        <li><a class="bg-green-500 p-2 rounded-lg" href="#">Save</a></li>
+        <li><a class="bg-gray-600 p-2 rounded-lg" href="#">Reset</a></li>
+        <li><a class="bg-orange-400 p-2 rounded-lg" href="#">Download</a></li>
+      </ul>
+    </nav>
+    <!-- end of control bar -->
+
+    <!-- workspace -->
+
+    <!-- personal info -->
+    <div class="bg-gray-200 shadow rounded-lg flex flex-col space-y-3 m-2 p-3">
+      <h3 class="text-xl font-bold text-center">Personal Info</h3>
+      <input type="text" name="fullName" id="" placeholder="Enter your name" />
+      <input
+        type="text"
+        name="title"
+        id=""
+        placeholder="Title e.g. Frontend Developer"
+      />
+      <textarea
+        name="About"
+        rows="3"
+        placeholder="A short 2 line introduction"
+        id=""
+      ></textarea>
+      <input type="email" placeholder="Enter your email" name="email" id="" />
+    </div>
+    <!-- About me -->
+    <div class="bg-gray-200 shadow rounded-lg flex flex-col space-y-3 m-2 p-3">
+      <h3 class="text-xl font-bold text-center">About me</h3>
+      <input type="text" name="headline" id="" placeholder="e.g. Who I am" />
+      <textarea
+        name="description"
+        rows="5"
+        placeholder="A description about you"
+        id=""
+      ></textarea>
+      <input
+        type="file"
+        accept=".pdf"
+        placeholder="Enter your email"
+        name="email"
+        id=""
+      />
+    </div>
+    <!-- skills  -->
+
+    <input type="text" name="skills" placeholder="Add your skills">
+    <button>Add Skill</button>
+    <p id="showSkills"></p>
+
+    <!-- end of workspace -->
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+    type="module"
+  ></script>
+</html>
