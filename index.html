@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="shortcut icon" href="/images/logosvg.svg" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Builder</title>
+    <title>Craftolio</title>
     <link rel="stylesheet" href="style.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -12,183 +13,246 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("nav-menu");
+        menu.classList.toggle("hidden");
+      }
+    </script>
   </head>
 
   <body class="bg-gray-50 text-neutral-900 font-['Momo_Trust_Display']">
     <!-- navbar section -->
     <nav
-      class="bg-slate-950 text-gray-200 flex justify-between items-center p-6 text-xl font-bold"
+      class="bg-slate-950 text-gray-200 p-4 md:p-6 flex items-center justify-between relative"
     >
-      <h1>Portfolio</h1>
+      <!-- Logo -->
+      <div class="flex justify-between gap-0.5">
+        <img src="images/logo.png" class="w-10 h-10" alt="" />
+        <h1 class="text-2xl font-bold">Craftolio</h1>
+      </div>
+
+      <!-- Hamburger button (small screens) -->
+      <button
+        class="md:hidden text-gray-950 bg-white p-2 rounded focus:outline-none"
+        onclick="document.getElementById('mobileMenu').classList.remove('translate-x-full')"
+      >
+        <i class="fa fa-bars text-xl"></i>
+      </button>
+
+      <!-- Desktop Menu -->
       <ul
-        class="space-x-12 pl-4 pr-4 flex justify-between items-center cursor-pointer [&_a]:text-slate-400 [&_a:hover]:text-orange-400"
+        class="hidden md:flex flex-row space-x-12 text-center [&_a]:text-slate-400 [&_a:hover]:text-orange-400"
+      >
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="builder.html">Get Started</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Side Panel Menu -->
+    <div
+      id="mobileMenu"
+      class="fixed top-0 right-0 w-2/5 sm:w-1/3 h-full bg-slate-900 text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden shadow-lg flex flex-col"
+    >
+      <!-- Close Button -->
+      <div
+        class="flex justify-between items-center p-4 border-b border-gray-700"
+      >
+        <h2 class="text-xl font-semibold">Menu</h2>
+        <button
+          class="text-gray-200 hover:text-orange-400 text-2xl"
+          onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')"
+        >
+          &times;
+        </button>
+      </div>
+
+      <!-- Menu Links -->
+      <ul
+        class="flex flex-col gap-6 p-6 text-lg [&_a]:text-slate-300 [&_a:hover]:text-orange-400"
       >
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Get Started</a></li>
       </ul>
-    </nav>
-    <!-- end of navabr section -->
+    </div>
+
+    <!-- end of navbar section -->
 
     <!-- hero section -->
-    <div class="bg-slate-900 text-center p-20">
-      <h1 class="text-gray-200 font-bold text-4xl">
+    <div class="bg-slate-900 text-center p-10 sm:p-16 md:p-20 lg:p-28">
+      <h1
+        class="text-gray-200 font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+      >
         Creating a Portfolio is very simple
       </h1>
-      <p class="text-slate-300 text-lg">
+      <p class="text-slate-300 text-base sm:text-lg md:text-xl mt-3 md:mt-5">
         Want to create Your own portfolio, You're at the right place.
       </p>
       <button
-        class="bg-orange-400 text-offWhite p-3 rounded-lg cursor-pointer mt-5 text-lg font-bold hover:bg-orange-500 hover:text-gray-100"
+        class="bg-orange-400 text-offWhite p-3 md:p-4 rounded-lg mt-5 text-base sm:text-lg md:text-xl font-bold hover:bg-orange-500 hover:text-gray-100"
       >
-        Create Your Portfolio
+        <a href="/builder.html"> Create Your Portfolio</a>
       </button>
     </div>
     <!-- end of hero section -->
 
-    <!-- main body -->
-
     <!-- features & benefits -->
-
-    <div id="features" class="m-8 p-8 rounded-lg shadow text-center">
-      <h3 class="text-2xl mt-3 mb-3">Why Build Your Portfolio with us?</h3>
+    <div
+      id="features"
+      class="m-4 sm:m-6 md:m-8 lg:m-12 p-6 md:p-10 rounded-lg shadow text-center"
+    >
+      <h3 class="text-2xl sm:text-3xl md:text-4xl mt-3 mb-6">
+        Why Build Your Portfolio with us?
+      </h3>
       <!-- cards -->
-      <div id="cards" class="flex items-center justify-between gap-8 mt-8 mb-4">
+      <div
+        id="cards"
+        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8"
+      >
         <!-- feature 1 -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-start md:items-center gap-4">
           <img
             class="object-contain w-10 h-10"
             src="./images/drag-drop.svg"
             alt="drag-drop"
           />
           <div>
-            <h5 class="text-lg m-1">Drag and Drop Builder</h5>
-            <p class="text-[10px] opacity-75">
+            <h5 class="text-lg md:text-xl font-semibold m-1">
+              Drag and Drop Builder
+            </h5>
+            <p class="text-sm md:text-base opacity-75">
               Build your Portfolio easily no coding required.
             </p>
           </div>
         </div>
-        <!-- feature 1 complete -->
-
         <!-- feature 2 -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-start md:items-center gap-4">
           <img
             class="object-contain w-10 h-10"
             src="./images/template.svg"
-            alt="drag-drop"
+            alt="template"
           />
           <div>
-            <h5 class="text-lg m-1">Modern and Custom Templates</h5>
-            <p class="text-[10px] opacity-75">
+            <h5 class="text-lg md:text-xl font-semibold m-1">
+              Modern and Custom Templates
+            </h5>
+            <p class="text-sm md:text-base opacity-75">
               Beautiful designs ready to use.
             </p>
           </div>
         </div>
-        <!-- feature 2 complete -->
-
         <!-- feature 3 -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-start md:items-center gap-4">
           <img
             class="object-contain w-10 h-10"
             src="./images/share.svg"
-            alt="drag-drop"
+            alt="share"
           />
           <div>
-            <h5 class="text-lg m-1">Download and Share</h5>
-            <p class="text-[10px] opacity-75">
+            <h5 class="text-lg md:text-xl font-semibold m-1">
+              Download and Share
+            </h5>
+            <p class="text-sm md:text-base opacity-75">
               Download your portfolio or share it - anywhere, anytime.
             </p>
           </div>
         </div>
-        <!-- feature 3 complete -->
       </div>
     </div>
-    <!-- end of feature & benefits -->
+    <!-- end of features & benefits -->
 
     <!-- How it works -->
-
-    <div id="working" class="rounded-lg text-center mt-4 mb-4 pt-8 pb-8">
-      <h3 class="text-2xl mt-5 mb-3">How it Works?</h3>
-      <!-- steps -->
-      <div class="flex justify-between items-center m-8 p-8 gap-6">
-        <!-- step1 -->
-        <div class="flex flex-col gap-3 items-center">
+    <div
+      id="working"
+      class="rounded-lg text-center mt-6 md:mt-10 mb-6 md:mb-10 pt-8 md:pt-12 pb-8 md:pb-12 px-4 md:px-10"
+    >
+      <h3 class="text-2xl sm:text-3xl md:text-4xl mt-5 mb-6">How it Works?</h3>
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8"
+      >
+        <!-- step 1 -->
+        <div
+          class="flex flex-col gap-3 items-start md:items-center text-left md:text-center"
+        >
           <h5
             class="bg-orange-600 text-neutral-50 p-4 w-12 h-12 rounded-full flex items-center justify-center"
           >
             1
           </h5>
-          <h6 class="text-xl">Choose a Template</h6>
-          <ul class="list-disc opacity-85 text-left">
+          <h6 class="text-xl md:text-2xl font-semibold">Choose a Template</h6>
+          <ul class="list-disc opacity-85 ml-4 md:ml-0">
             <li>Pick a design that matches your style.</li>
             <li>Select from professionally crafted layouts.</li>
             <li>Find a template that highlights your work.</li>
           </ul>
         </div>
-        <!-- end of step 1 -->
-
         <!-- step 2 -->
-        <div class="flex flex-col gap-3 items-center">
+        <div
+          class="flex flex-col gap-3 items-start md:items-center text-left md:text-center"
+        >
           <h5
             class="bg-orange-600 text-neutral-50 p-4 w-12 h-12 rounded-full flex items-center justify-center"
           >
-            1
+            2
           </h5>
-          <h6 class="text-xl">Customize</h6>
-          <ul class="list-disc opacity-85 text-left">
+          <h6 class="text-xl md:text-2xl font-semibold">Customize</h6>
+          <ul class="list-disc opacity-85 ml-4 md:ml-0">
             <li>Add your projects, bio, and links.</li>
             <li>Make it truly yours with colors and fonts.</li>
             <li>Personalize your portfolio in minutes.</li>
           </ul>
         </div>
-        <!-- end of step 2 -->
-
         <!-- step 3 -->
-        <div class="flex flex-col gap-3 items-center">
+        <div
+          class="flex flex-col gap-3 items-start md:items-center text-left md:text-center"
+        >
           <h5
             class="bg-orange-600 text-neutral-50 p-4 w-12 h-12 rounded-full flex items-center justify-center"
           >
-            1
+            3
           </h5>
-          <h6 class="text-xl">Download & Share</h6>
-          <ul class="list-disc opacity-85 text-left">
+          <h6 class="text-xl md:text-2xl font-semibold">Download & Share</h6>
+          <ul class="list-disc opacity-85 ml-4 md:ml-0">
             <li>Download and show off your work.</li>
             <li>Share your portfolio with anyone, anywhere.</li>
             <li>Easily showcase your work on any device.</li>
           </ul>
         </div>
-        <!-- end of step 3 -->
       </div>
     </div>
-
     <!-- end of How it works -->
 
     <!-- quote -->
-
     <div
-      class="flex items-center justify-center bg-gray-100 text-gray-800 opacity-75 ml-20 mr-20 mb-8 p-5 shadow-lg rounded-sm"
+      class="flex items-center justify-center bg-gray-100 text-gray-800 opacity-75 mx-4 md:mx-20 mb-8 p-6 md:p-10 shadow-lg rounded-lg text-center"
     >
-      <p>“Join thousands of creators building their online presence today.”</p>
+      <p class="text-base md:text-lg">
+        “Join thousands of creators building their online presence today.”
+      </p>
     </div>
-
     <!-- end of quote -->
 
     <!-- faq -->
-
-    <div class="m-5 ml-10 mr-10 p-5 pl-20 pr-20 flex flex-col gap-2">
-      <h3 class="text-2xl font-bold mb-4 text-center">FAQ</h3>
+    <div class="m-4 md:m-10 p-5 md:p-8 flex flex-col gap-3">
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">
+        FAQ
+      </h3>
       <div>
         <h6 class="font-semibold cursor-pointer">
           1. Is it really free to start?
         </h6>
-        <p class="ml-4 m-2">A: Yes! You can create your portfolio for free.</p>
+        <p class="ml-4 m-2 md:m-2">
+          A: Yes! You can create your portfolio for free.
+        </p>
         <hr />
       </div>
       <div>
         <h6 class="font-semibold cursor-pointer">
           Q2: Do I need coding skills?
         </h6>
-        <p class="ml-4 m-2">
+        <p class="ml-4 m-2 md:m-2">
           A: Not at all! Our drag-and-drop builder makes it easy for anyone to
           design a professional portfolio.
         </p>
@@ -198,31 +262,29 @@
         <h6 class="font-semibold cursor-pointer">
           Q3: Can I download or share my portfolio?
         </h6>
-        <p class="ml-4 m-2">A: Yes! You can Download and Share it.</p>
+        <p class="ml-4 m-2 md:m-2">A: Yes! You can Download and Share it.</p>
         <hr />
       </div>
     </div>
-
     <!-- end of faq -->
 
     <!-- footer -->
-
     <footer
-      class="flex items-center justify-between m-4 mb-0 p-5 pr-12 pl-12 text-lg"
+      class="flex flex-col md:flex-row items-center justify-between m-4 md:m-5 p-5 md:p-8 text-lg gap-4 md:gap-0"
     >
       <div class="flex items-center justify-center gap-8 text-2xl">
         <a href="#"><i class="fa-brands fa-github"></i></a>
         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
       </div>
-      <div>
-        <p>&copy;Harshit Pant, 2025. All Rights Reserved.</p>
+      <div class="text-center md:text-right">
+        <p>&copy; Harshit Pant, 2025. All Rights Reserved.</p>
       </div>
     </footer>
-
     <!-- end of footer -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"
+    ></script>
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
-    type="module"
-  ></script>
 </html>
