@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Preview</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+  </head>
+  <body
+    class="text-white bg-linear-to-br from-indigo-600 via-purple-600 to-pink-500 font-[Poppins]"
+  >
+    <!-- Wrapper -->
+    <div id="portfolio" class="">
+      <!-- max-w-5xl mx-auto py-10 px-6 space-y-16 -->
+      <!-- Header Section -->
+
+      <header class="h-screen flex items-center justify-center px-4">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-40">
+          <!-- Left Side: Image -->
+          <img
+            src="images/person.jpg"
+            class="w-50 h-50 sm:w-80 sm:h-80 rounded-full"
+            alt="Profile photo"
+          />
+
+          <!-- Right Side: Text -->
+          <div
+            class="flex flex-col items-center text-center md:items-start md:text-left"
+          >
+            <h1 id="previewName" class="text-4xl md:text-5xl font-bold">
+              Your Name
+            </h1>
+            <p id="previewTagline" class="text-lg md:text-xl text-gray-300">
+              Your tagline or role
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- About Section -->
+      <section
+        class="m-8 my-12 bg-gray-800/70 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-gray-700"
+      >
+        <h2 class="text-2xl font-semibold text-center pb-2 mb-4 text-gray-100">
+          About Me
+        </h2>
+
+        <div
+          class="flex flex-col md:flex-row items-center relative p-6 md:p-10"
+        >
+          <!-- Middle Line -->
+          <div
+            class="hidden md:block absolute left-1/2 top-0 h-full border-l border-gray-600"
+          ></div>
+
+          <!-- Left: Text -->
+          <div
+            class="w-full md:w-1/2 flex justify-center md:justify-end pr-0 md:pr-10 z-10"
+          >
+            <p
+              id="previewAbout"
+              class="text-gray-200 leading-relaxed text-center md:text-right max-w-md"
+            >
+              Write something about yourself. This will be updated in real-time
+              as you type in the builder. (At least 5-10 lines.)
+            </p>
+          </div>
+
+          <!-- Right: Image -->
+          <div
+            class="w-full md:w-1/2 flex justify-center md:justify-center mt-8 md:mt-0 z-10"
+          >
+            <img
+              src="images/person.jpg"
+              class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover"
+              alt="Image 2"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="m-8 p-6">
+        <h2 class="text-center text-2xl font-semibold pb-2 mb-4">Skills</h2>
+        <ul id="previewSkills" class="flex flex-wrap gap-2">
+          <li
+            class="px-4 py-1 bg-white/10 text-gray-200 rounded-full text-sm font-medium hover:bg-white/20 transition"
+          >
+            HTML
+          </li>
+          <li
+            class="px-4 py-1 bg-white/10 text-gray-200 rounded-full text-sm font-medium hover:bg-white/20 transition"
+          >
+            CSS
+          </li>
+        </ul>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="m-8 p-6">
+        <h2 class="text-2xl font-semibold text-center pb-2 mb-6">Projects</h2>
+        <div id="previewProjects" class="grid md:grid-cols-2 gap-6">
+          <div
+            class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition"
+          >
+            <img
+              src="https://img.icons8.com/ios-filled/100/image.png"
+              alt="Project"
+              class="rounded-md mb-3"
+            />
+            <h3 class="font-semibold text-lg mb-1">Project Title</h3>
+            <p class="text-gray-300 text-sm mb-2">Short project description.</p>
+            <a
+              href="#"
+              target="_blank"
+              class="text-pink-400 text-sm hover:underline"
+              >View Project →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+
+      <section class="m-8 p-6 text-center">
+        <h2 class="text-2xl font-semibold pb-2 mb-4">Education</h2>
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <h3 class="text-indigo-400 font-bold">Master of Technology</h4>
+            <p>
+              I have completed my M.Tech from [Institute Name] with a CGPA of
+              9.0. During my M.Tech, I worked on several academic and
+              industry-oriented projects that strengthened my technical and
+              analytical skills.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-indigo-400 font-bold">Bachelor of Technology</h4>
+            <p>
+              I have completed my B.Tech from [Institute Name] with a CGPA of
+              8.0. My coursework and research focused on [your specialization,
+              e.g., Artificial Intelligence and Machine Learning].
+            </p>
+          </div>
+          <div>
+            <h4 class="text-indigo-400">Class XIIth</h4>
+            <p>
+              I have completed my class 12th from DPS. The program helped me
+              develop a strong foundation in [key subjects or skills], which I
+              am eager to apply in professional and research settings.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="m-8 p-6">
+        <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-4">
+          Contact
+        </h2>
+        <div id="previewContact" class="flex flex-wrap gap-4">
+          <a
+            id="previewPhone"
+            href="#"
+            class="text-shadow-pink-400 hover:text-pink-400 transition"
+            >📞 Phone</a
+          >
+          <a
+            id="previewEmail"
+            href="#"
+            class="text-shadow-pink-400 hover:text-pink-400 transition"
+            >📧 Email</a
+          >
+          <a
+            id="previewLinkedin"
+            href="#"
+            class="text-shadow-pink-400 hover:text-pink-400 transition"
+            >💼 LinkedIn</a
+          >
+          <a
+            id="previewGithub"
+            href="#"
+            class="text-shadow-pink-400 hover:text-pink-400 transition"
+            >🐙 GitHub</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // Listen for messages from builder.js
+      window.addEventListener("message", (event) => {
+        const data = event.data;
+        if (!data || typeof data !== "object") return;
+
+        const portfolio = document.getElementById("portfolio");
+        if (!portfolio) return;
+
+        // Clear old content
+        portfolio.innerHTML = "";
+
+        // Render based on selected template
+        switch (data.template) {
+          // --- MODERN TEMPLATE ---
+          case "modern":
+          default: {
+            portfolio.innerHTML = `
+            <header class="h-screen flex items-center justify-center px-4">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-40">
+          <!-- Left Side: Image -->
+          <img src="${
+            data.profileImage || "./images/person.jpg"
+          }" alt="Profile Image" class="w-50 h-50 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-blue-100 shadow-md mb-2">
+
+          <!-- Right Side: Text -->
+          <div
+            class="flex flex-col items-center text-center md:items-start md:text-left"
+          >
+            <h1 id="previewName" class="text-4xl md:text-5xl font-bold">
+              ${data.name || "Your Name"}
+            </h1>
+            <p id="previewTagline" class="text-lg md:text-xl text-gray-300">
+              ${data.tagline || "Your tagline or role"}
+            </p>
+          </div>
+        </div>
+      </header>
+      
+      <section
+        class="m-8 my-12 bg-gray-800/70 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-gray-700"
+      >
+        <h2 class="text-2xl font-semibold text-center pb-2 mb-4 text-gray-100">
+          About Me
+        </h2>
+
+        <div
+          class="flex flex-col md:flex-row items-center relative p-6 md:p-10"
+        >
+          <!-- Middle Line -->
+          <div
+            class="hidden md:block absolute left-1/2 top-0 h-full border-l border-gray-600"
+          ></div>
+
+          <!-- Left: Text -->
+          <div
+            class="w-full md:w-1/2 flex justify-center md:justify-end pr-0 md:pr-10 z-10"
+          >
+            <p
+              id="previewAbout"
+              class="text-gray-200 leading-relaxed text-center md:text-right max-w-md"
+            >
+      ${
+        data.about ||
+        "Write something about yourself. This will be updated in real-time as you type in the builder. (At least 5-10 lines.)"
+      }
+            </p>
+          </div>
+
+          <!-- Right: Image -->
+          <div
+            class="w-full md:w-1/2 flex justify-center md:justify-center mt-8 md:mt-0 z-10"
+          >
+            <img
+              src="${data.aboutImage || "./images/person.jpg"}"
+              class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover"
+              alt="Image 2"
+            />
+          </div>
+        </div>
+      </section>
+
+
+        <section class="m-8 p-6">
+          <h2 class="text-center text-2xl font-semibold pb-2 mb-4">Skills</h2>
+          <ul id="previewSkills" class="flex flex-wrap gap-2">
+          </ul>
+        </section>
+
+        <section class="m-8 p-6">
+          <h2 class="text-2xl font-semibold text-center pb-2 mb-6">Projects</h2>
+          <div id="previewProjects" class="grid md:grid-cols-2 gap-6"></div>
+        </section>
+
+        <section class="m-8 p-6 text-center">
+          <h2 class="text-2xl font-semibold pb-2 mb-4">Education</h2>
+          <div class="flex items-center justify-between gap-4"></div>
+        </section>
+
+        <section class="m-8 p-6">
+          <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-4">Contact</h2>
+          <div id="previewContact" class="flex flex-wrap gap-4">
+            <a id="previewPhone" href="#" class="text-shadow-pink-400 hover:text-pink-400 transition" >📞 Phone</a>
+            <a id="previewEmail" href="#" class="text-shadow-pink-400 hover:text-pink-400 transition" >📧 Email</a>
+            <a id="previewLinkedin" href="#" class="text-shadow-pink-400 hover:text-pink-400 transition" >💼 LinkedIn</a>
+            <a id="previewGithub" href="#" class="text-shadow-pink-400 hover:text-pink-400 transition" >🐙 GitHub</a>
+          </div>
+        </section>
+      `;
+            break;
+          }
+
+          // --- CLASSIC TEMPLATE ---
+          case "classic": {
+            portfolio.innerHTML = `
+        <header class="flex flex-col sm:flex-row items-center sm:items-start gap-6 border-b pb-4 mb-6">
+          ${
+            data.profileImage
+              ? `<img src="${data.profileImage}" alt="Profile Image" class="w-32 h-32 rounded-md object-cover shadow">`
+              : ""
+          }
+          <div class="text-left">
+            <h1 id="previewName" class="text-3xl font-bold">${
+              data.name || "Your Name"
+            }</h1>
+            <p id="previewTagline" class="italic text-gray-500">${
+              data.tagline || "Your tagline or role"
+            }</p>
+          </div>
+        </header>
+
+        <section class="mb-6">
+          <h2 class="font-semibold text-lg mb-1">About</h2>
+          <p id="previewAbout">${
+            data.about || "Write something about yourself."
+          }</p>
+        </section>
+
+        <section class="mb-6">
+          <h2 class="font-semibold text-lg mb-1">Skills</h2>
+          <ul id="previewSkills" class="list-disc ml-6"></ul>
+        </section>
+
+        <section class="mb-6">
+          <h2 class="font-semibold text-lg mb-1">Projects</h2>
+          <div id="previewProjects" class="space-y-4"></div>
+        </section>
+
+        <section class="m-8 p-6">
+          <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-4">Contact</h2>
+          <div id="previewContact" class="flex flex-wrap gap-4">
+            <a id="previewPhone" href="#" class="text-shadow-pink-400 hover:text-pink-400 transition" >📞 Phone</a>
+            <a id="previewEmail" href="#" class="text-shadow-pink-400 hover:text-pink-400 transition" >📧 Email</a>
+            <a id="previewLinkedin" href="#" class="text-shadow-pink-400 hover:text-pink-400 transition" >💼 LinkedIn</a>
+            <a id="previewGithub" href="#" class="text-shadow-pink-400 hover:text-pink-400 transition" >🐙 GitHub</a>
+          </div>
+        </section>
+      `;
+            break;
+          }
+
+          // --- MINIMAL TEMPLATE ---
+          case "minimal": {
+            portfolio.innerHTML = `
+        <header class="flex flex-col items-center text-center space-y-3 m-8">
+          ${
+            data.profileImage
+              ? `<img src="${data.profileImage}" alt="Profile Image" class="w-24 h-24 rounded-full object-cover border border-gray-200 shadow-sm">`
+              : ""
+          }
+          <div>
+            <h1 id="previewName" class="text-3xl font-bold">${
+              data.name || "Your Name"
+            }</h1>
+            <p id="previewTagline" class="text-gray-500">${
+              data.tagline || "Your tagline or role"
+            }</p>
+          </div>
+        </header>
+        <p id="previewAbout" class="text-center max-w-2xl mx-auto mb-6">${
+          data.about || ""
+        }</p>
+        <div id="previewSkills" class="flex flex-wrap justify-center gap-2 mb-6"></div>
+        <div id="previewProjects" class="grid gap-4 md:grid-cols-2"></div>
+        <div id="previewContact" class="flex justify-center gap-4 mt-8">
+          <a id="previewPhone" href="#" class="text-gray-600 hover:text-blue-600">Phone</a>
+          <a id="previewEmail" href="#" class="text-gray-600 hover:text-blue-600">📧</a>
+          <a id="previewLinkedin" href="#" class="text-gray-600 hover:text-blue-600">💼</a>
+          <a id="previewGithub" href="#" class="text-gray-600 hover:text-blue-600">🐙</a>
+        </div>
+      `;
+            break;
+          }
+        }
+
+        // ✅ Populate shared content dynamically
+
+        // Skills
+        const skillsContainer = document.getElementById("previewSkills");
+        if (skillsContainer && data.skills) {
+          skillsContainer.innerHTML = "";
+          data.skills.forEach((skill) => {
+            const el = document.createElement("li");
+            el.className =
+              data.template === "classic"
+                ? "list-disc ml-6"
+                : "px-4 py-1 bg-white/10 text-gray-200 rounded-full text-sm font-medium hover:bg-white/20 transition";
+            el.textContent = skill;
+            skillsContainer.appendChild(el);
+          });
+        }
+
+        // Projects
+        const projectsContainer = document.getElementById("previewProjects");
+        if (projectsContainer && data.projects) {
+          projectsContainer.innerHTML = "";
+          data.projects.forEach((p) => {
+            const card = document.createElement("div");
+            card.className =
+              data.template === "classic"
+                ? "mb-4"
+                : "border border-gray-200 rounded-lg p-4 hover:shadow-md transition";
+            card.innerHTML = `
+        ${
+          p.image
+            ? `<img src="${p.image}" alt="${p.title}" class="rounded-md mb-3">`
+            : ""
+        }
+        <h3 class="font-semibold text-lg mb-1">${
+          p.title || "Project Title"
+        }</h3>
+        <p class="text-gray-600 text-sm mb-2">${
+          p.description || "Project description."
+        }</p>
+        ${
+          p.link
+            ? `<a href="${p.link}" target="_blank" class="text-blue-600 text-sm hover:underline">View Project →</a>`
+            : ""
+        }
+      `;
+            projectsContainer.appendChild(card);
+          });
+        }
+
+        // Contact
+        if (document.getElementById("previewEmail"))
+          document.getElementById("previewEmail").href = data.email
+            ? `mailto:${data.email}`
+            : "#";
+        if (document.getElementById("previewLinkedin"))
+          document.getElementById("previewLinkedin").href =
+            data.linkedin || "#";
+        if (document.getElementById("previewGithub"))
+          document.getElementById("previewGithub").href = data.github || "#";
+      });
+    </script>
+  </body>
+</html>
