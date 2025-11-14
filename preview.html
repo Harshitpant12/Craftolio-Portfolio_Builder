@@ -214,6 +214,8 @@
           // --- MODERN TEMPLATE ---
           case "modern":
           default: {
+            document.body.classList.add =
+              "text-white bg-linear-to-br from-indigo-600 via-purple-600 to-pink-500 font-[Poppins]";
             portfolio.innerHTML = `
             <header class="h-screen flex items-center justify-center px-4">
         <div class="flex flex-col md:flex-row items-center gap-8 md:gap-40">
@@ -311,6 +313,8 @@
 
           // --- CLASSIC TEMPLATE ---
           case "classic": {
+            document.body.classList =
+              "bg-linear-to-b from-neutral-50 to-neutral-400 font-[Outfit] text-gray-800";
             portfolio.innerHTML = `
         <header class="flex flex-col sm:flex-row items-center sm:items-start gap-6 border-b pb-4 mb-6">
           ${
@@ -360,34 +364,102 @@
 
           // --- MINIMAL TEMPLATE ---
           case "minimal": {
+            document.body.className =
+              "bg-linear-to-b from-neutral-50 to-neutral-300 font-[Outfit] text-gray-800";
             portfolio.innerHTML = `
-        <header class="flex flex-col items-center text-center space-y-3 m-8">
-          ${
-            data.profileImage
-              ? `<img src="${data.profileImage}" alt="Profile Image" class="w-24 h-24 rounded-full object-cover border border-gray-200 shadow-sm">`
-              : ""
-          }
-          <div>
-            <h1 id="previewName" class="text-3xl font-bold">${
-              data.name || "Your Name"
-            }</h1>
-            <p id="previewTagline" class="text-gray-500">${
-              data.tagline || "Your tagline or role"
-            }</p>
-          </div>
-        </header>
-        <p id="previewAbout" class="text-center max-w-2xl mx-auto mb-6">${
-          data.about || ""
-        }</p>
-        <div id="previewSkills" class="flex flex-wrap justify-center gap-2 mb-6"></div>
-        <div id="previewProjects" class="grid gap-4 md:grid-cols-2"></div>
-        <div id="previewContact" class="flex justify-center gap-4 mt-8">
-          <a id="previewPhone" href="#" class="text-gray-600 hover:text-blue-600">Phone</a>
-          <a id="previewEmail" href="#" class="text-gray-600 hover:text-blue-600">📧</a>
-          <a id="previewLinkedin" href="#" class="text-gray-600 hover:text-blue-600">💼</a>
-          <a id="previewGithub" href="#" class="text-gray-600 hover:text-blue-600">🐙</a>
-        </div>
-      `;
+            <!-- HEADER -->
+              <header class="py-24 px-6 md:px-16 lg:px-28">
+                <div class="grid md:grid-cols-2 items-center gap-16">
+                  
+                  <!-- Left: Image -->
+                  <div class="flex justify-center md:justify-start">
+                    <img 
+                      src="${data.profileImage || ""}" 
+                      class="w-48 h-48 md:w-64 md:h-64 rounded-3xl object-cover shadow-sm" 
+                    />
+                  </div>
+
+                  <!-- Right: Intro -->
+                  <div>
+                    <h1 id="previewName" class="text-4xl md:text-5xl font-semibold tracking-tight">
+                      ${data.name || "Your Name"}
+                    </h1>
+                    <p id="previewTagline" class="text-lg md:text-xl text-gray-600 mt-3">
+                      ${data.tagline || "Your tagline or role"}
+                    </p>
+                  </div>
+
+                </div>
+              </header>
+
+
+              <!-- ABOUT SECTION -->
+              <section class="px-6 md:px-16 lg:px-28 py-16 bg-white rounded-3xl shadow-sm border border-neutral-200">
+                <h2 class="text-2xl font-semibold mb-8 tracking-tight">About Me</h2>
+
+                <div class="grid md:grid-cols-3 gap-12">
+
+                  <!-- Text spanning 2 columns -->
+                  <div class="md:col-span-2">
+                    <p 
+                      id="previewAbout" 
+                      class="text-gray-700 leading-relaxed max-w-xl"
+                    >
+                      ${
+                        data.about ||
+                        "Write something about yourself. This will be updated in real-time as you type in the builder. (At least 5-10 lines.)"
+                      }
+                    </p>
+                  </div>
+
+                  <!-- Image -->
+                  <div class="flex justify-center md:justify-end">
+                    <img 
+                      src="${data.aboutImage || ""}" 
+                      class="w-40 h-40 md:w-48 md:h-48 rounded-xl object-cover shadow-sm"
+                    />
+                  </div>
+
+                </div>
+              </section>
+
+
+              <!-- SKILLS SECTION -->
+              <section class="px-6 md:px-16 lg:px-28 py-16">
+                <h2 class="text-2xl font-semibold mb-8 tracking-tight">Skills</h2>
+                <ul id="previewSkills" class="flex flex-wrap gap-3"></ul>
+              </section>
+
+
+              <!-- PROJECTS SECTION (New Minimal Style Grid) -->
+              <section class="px-6 md:px-16 lg:px-28 py-16">
+                <h2 class="text-2xl font-semibold mb-10 tracking-tight">Projects</h2>
+
+                <div id="previewProjects" class="grid md:grid-cols-2 gap-10">
+                </div>
+              </section>
+
+
+              <!-- EDUCATION SECTION (New vertical timeline style) -->
+              <section class="px-6 md:px-16 lg:px-28 py-16">
+                <h2 class="text-2xl font-semibold mb-10 tracking-tight text-center">Education</h2>
+                <div id="previewEducations" class="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
+                </div>
+              </section>
+
+
+              <!-- CONTACT -->
+              <section class="px-6 md:px-16 lg:px-28 py-16">
+                <h2 class="text-2xl font-semibold mb-6 border-b pb-2 tracking-tight">Contact</h2>
+
+                <div id="previewContact" class="flex flex-wrap gap-4">
+                  <a id="previewPhone" class="text-gray-700 hover:text-black transition">📞 Phone</a>
+                  <a id="previewEmail" class="text-gray-700 hover:text-black transition">📧 Email</a>
+                  <a id="previewLinkedin" class="text-gray-700 hover:text-black transition">💼 LinkedIn</a>
+                  <a id="previewGithub" class="text-gray-700 hover:text-black transition">🐙 GitHub</a>
+                </div>
+              </section>
+              `;
             break;
           }
         }
@@ -400,10 +472,15 @@
           skillsContainer.innerHTML = "";
           data.skills.forEach((skill) => {
             const el = document.createElement("li");
-            el.className =
-              data.template === "classic"
-                ? "list-disc ml-6"
-                : "px-4 py-1 bg-white/10 text-gray-200 rounded-full text-sm font-medium hover:bg-white/20 transition";
+            if (data.template === "modern") {
+              el.className =
+                "px-4 py-1 bg-white/10 text-gray-200 rounded-full text-sm font-medium hover:bg-white/20 transition";
+            } else if (data.template === "minimal") {
+              el.className =
+                "px-4 py-1 bg-neutral-200 text-gray-700 rounded-full text-sm font-medium hover:bg-neutral-300 transition";
+            } else if (data.template === "classic") {
+              el.className = "list-disc ml-6";
+            }
             el.textContent = skill;
             skillsContainer.appendChild(el);
           });
@@ -419,24 +496,63 @@
               data.template === "classic"
                 ? "mb-4"
                 : "border border-gray-200 rounded-lg p-4 hover:shadow-md transition";
-            card.innerHTML = `
-        ${
-          p.image
-            ? `<img src="${p.image}" alt="${p.title}" class="rounded-md mb-3">`
-            : ""
-        }
-        <h3 class="font-semibold text-lg mb-1">${
-          p.title || "Project Title"
-        }</h3>
-        <p class="text-gray-600 text-sm mb-2">${
-          p.description || "Project description."
-        }</p>
-        ${
-          p.link
-            ? `<a href="${p.link}" target="_blank" class="text-pink-400 text-sm hover:underline">View Project →</a>`
-            : ""
-        }
-      `;
+            if (data.template === "modern") {
+              card.innerHTML = `
+                ${
+                  p.image
+                    ? `<img src="${p.image}" alt="${p.title}" class="rounded-md mb-3">`
+                    : ""
+                }
+                <h3 class="font-semibold text-lg mb-1">${
+                  p.title || "Project Title"
+                }</h3>
+                <p class="text-gray-600 text-sm mb-2">${
+                  p.description || "Project description."
+                }</p>
+                ${
+                  p.link
+                    ? `<a href="${p.link}" target="_blank" class="text-pink-400 text-sm hover:underline">View Project →</a>`
+                    : ""
+                }`;
+            } else if (data.template === "minimal") {
+              card.innerHTML = `
+                ${
+                  p.image
+                    ? `<img src="${p.image}" alt="${p.title}" class="rounded-lg mb-4 w-full object-cover">`
+                    : ""
+                }
+                <h3 class="font-semibold text-lg text-gray-800 mb-2">${
+                  p.title || "Project Title"
+                }</h3>
+                <p class="text-gray-600 text-sm mb-3 leading-relaxed">${
+                  p.description || "Project description."
+                }</p>
+                ${
+                  p.link
+                    ? `<a href="${p.link}" target="_blank" class="text-gray-700 text-sm font-medium hover:text-black underline-offset-2 hover:underline transition">View Project →</a>`
+                    : ""
+                }
+              `;
+            } else if (data.template === "classic") {
+              card.innerHTML = `
+                ${
+                  p.image
+                    ? `<img src="${p.image}" alt="${p.title}" class="rounded-lg mb-4 w-full object-cover">`
+                    : ""
+                }
+                <h3 class="font-semibold text-lg text-gray-800 mb-2">${
+                  p.title || "Project Title"
+                }</h3>
+                <p class="text-gray-600 text-sm mb-3 leading-relaxed">${
+                  p.description || "Project description."
+                }</p>
+                ${
+                  p.link
+                    ? `<a href="${p.link}" target="_blank" class="text-gray-700 text-sm font-medium hover:text-black underline-offset-2 hover:underline transition">View Project →</a>`
+                    : ""
+                }
+              `;
+            }
             projectsContainer.appendChild(card);
           });
         }
@@ -451,15 +567,42 @@
             switch (data.template) {
               case "modern":
                 card.className = "w-full md:w-1/3";
+                card.innerHTML = `
+                  <h4 class="text-indigo-400 font-bold text-2xl">${
+                    e.title || "Education Title"
+                  }</h4>
+                  <p>${e.description || "Education description."}</p>
+                `;
+                break;
+
+              case "minimal":
+                card.className =
+                  "w-full sm:w-[45%] md:w-[30%] p-4 bg-white border border-neutral-200 rounded-xl shadow-sm";
+                card.innerHTML = `
+                  <h4 class="font-semibold text-xl text-gray-800 mb-1">${
+                    e.title || "Education Title"
+                  }</h4>
+                  <p class="text-gray-600 text-sm leading-relaxed">${
+                    e.description || "Education description."
+                  }</p>
+                `;
+                break;
+
+              case "classic":
+                card.className =
+                  "w-full sm:w-[45%] md:w-[30%] p-4 bg-white border border-neutral-200 rounded-xl shadow-sm";
+                card.innerHTML = `
+                  <h4 class="font-semibold text-xl text-gray-800 mb-1">${
+                    e.title || "Education Title"
+                  }</h4>
+                  <p class="text-gray-600 text-sm leading-relaxed">${
+                    e.description || "Education description."
+                  }</p>
+                `;
                 break;
               //add for classic and minimal as well
             }
-            card.innerHTML = `
-        <h4 class="text-indigo-400 font-bold text-2xl">${
-          e.title || "Education Title"
-        }</h4>
-        <p>${e.description || "Education description."}</p>
-      `;
+
             educationsContainer.appendChild(card);
           });
         }

@@ -526,23 +526,146 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderMinimalTemplate(data) {
-    const projects = (data.projects || [])
-      .map(
-        (p) => `
-      <div>
-        <h3 class="font-medium">${p.title}</h3>
-        <p class="text-sm">${p.description}</p>
-      </div>`
-      )
-      .join("");
-
+    const skills = (data.skills || [])
+      .map((s) => `<li class="px-4 py-1 bg-neutral-200 text-gray-700 rounded-full text-sm font-medium hover:bg-neutral-300 transition">${s}</li>`
+      ).join(" ");
+    const projects = (data.projects || []).map((p) =>
+      `
+        <div class="flex-1 min-w-[300px] border border-neutral-200 bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <img src="${p.image || 'https://img.icons8.com/ios-filled/100/image.png'}" class="rounded-lg mb-4 w-full object-cover">
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">${p.title || "Untitled"}</h3>
+          <p class="text-gray-600 text-sm mb-3 leading-relaxed">${p.description || ""}</p>
+          <a href="${p.link}" target="_blank" class="text-gray-700 text-sm font-medium hover:text-black underline-offset-2 hover:underline transition">
+            View Project →
+          </a>
+        </div>
+      `).join("");
+    const educations = (data.educations || []).map((e) =>
+      `
+    <div class="w-full sm:w-[45%] md:w-[30%] p-4 bg-white border border-neutral-200 rounded-xl shadow-sm">
+      <h4 class="font-semibold text-xl text-gray-800 mb-1">
+        ${e.title || "Untitled"}
+      </h4>
+      <p class="text-gray-600 text-sm leading-relaxed">
+        ${e.description || ""}
+      </p>
+    </div>
+    `).join("");
     return `
-    <header class="text-center space-y-2">
-      ${data.profileImage ? `<img src="${data.profileImage}" class="w-24 h-24 rounded-full mx-auto object-cover border border-gray-300 shadow-sm">` : ""}
-      <h1 class="text-3xl font-bold">${data.name}</h1>
-      <p class="text-gray-500">${data.tagline}</p>
+    <body class="bg-linear-to-b from-neutral-50 to-neutral-300 font-[Outfit] text-gray-800">
+
+  <!-- Wrapper -->
+  <div id="portfolio">
+
+    <!-- HEADER -->
+    <header class="py-24 px-6 md:px-16 lg:px-28">
+      <div class="grid md:grid-cols-2 items-center gap-16">
+
+        <!-- Image -->
+        <div class="flex justify-center md:justify-start">
+          ${data.profileImage
+        ? `<img src="${data.profileImage}" class="w-48 h-48 md:w-64 md:h-64 rounded-3xl object-cover shadow-sm" />`
+        : `images/person.jpg`
+      }
+        </div>
+
+        <!-- Text -->
+        <div>
+          <h1 class="text-4xl md:text-5xl font-semibold tracking-tight">
+            ${data.name}
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 mt-3">
+            ${data.tagline}
+          </p>
+        </div>
+
+      </div>
     </header>
-    <p class="text-center max-w-lg mx-auto my-4">${data.about}</p>
-    <div class="grid gap-3">${projects}</div>`;
+
+
+    <!-- ABOUT SECTION -->
+    <section class="px-6 md:px-16 lg:px-28 py-16 bg-white rounded-3xl shadow-sm border border-neutral-200">
+      <h2 class="text-2xl font-semibold mb-8 tracking-tight text-center">About Me</h2>
+
+      <div class="grid md:grid-cols-3 gap-12">
+
+        <!-- Text -->
+        <div class="md:col-span-2 flex justify-center md:justify-start">
+          <p class="text-gray-700 leading-relaxed max-w-xl text-center md:text-left">
+            ${data.about}
+          </p>
+        </div>
+
+        <!-- Image -->
+        <div class="flex justify-center md:justify-end">
+          ${data.aboutImage
+        ? `<img src="${data.aboutImage}" class="w-40 h-40 md:w-48 md:h-48 rounded-xl object-cover shadow-sm" />`
+        : `images/person.jpg`
+      }
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+    <section class="px-6 md:px-16 lg:px-28 py-16">
+      <h2 class="text-2xl font-semibold mb-8 tracking-tight text-center">Skills</h2>
+      <ul class="flex flex-wrap gap-3 justify-center">${skills}</ul>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="px-6 md:px-16 lg:px-28 py-16">
+      <h2 class="text-2xl font-semibold mb-10 tracking-tight text-center">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-10 justify-center">${projects}</div>
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section class="px-6 md:px-16 lg:px-28 py-16">
+      <h2 class="text-2xl font-semibold mb-10 tracking-tight text-center">Education</h2>
+
+      <div class="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">${educations}</div>
+      
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="px-6 md:px-16 lg:px-28 py-16">
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4 tracking-tight">Contact</h2>
+
+      <div class="flex flex-wrap gap-4">
+        ${data.phone ? `<a href="tel:+91${data.phone}" class="text-gray-700 hover:text-black transition">📞 Phone</a>` : ""}
+        ${data.email ? `<a href="mailto:${data.email}" class="text-gray-700 hover:text-black transition">📧 Email</a>` : ""}
+        ${data.linkedin ? `<a href="${data.linkedin}" class="text-gray-700 hover:text-black transition">💼 LinkedIn</a>` : ""}
+        ${data.github ? `<a href="${data.github}" class="text-gray-700 hover:text-black transition">🐙 GitHub</a>` : ""}
+      </div>
+    </section>
+
+  </div>
+</body>
+`;
+    // const projects = (data.projects || [])
+    //   .map(
+    //     (p) => `
+    //   <div>
+    //     <h3 class="font-medium">${p.title}</h3>
+    //     <p class="text-sm">${p.description}</p>
+    //   </div>`
+    //   )
+    //   .join("");
+
+    // return `
+    // <body class="bg-linear-to-b from-neutral-50 to-neutral-100">
+    // <header class="text-center space-y-2">
+    //   ${data.profileImage ? `<img src="${data.profileImage}" class="w-24 h-24 rounded-full mx-auto object-cover border border-gray-300 shadow-sm">` : ""}
+    //   <h1 class="text-3xl font-bold">${data.name}</h1>
+    //   <p class="text-gray-500">${data.tagline}</p>
+    // </header>
+    // <p class="text-center max-w-lg mx-auto my-4">${data.about}</p>
+    // <div class="grid gap-3">${projects}</div>
+    // </body>`
+    // ;
   }
 });
