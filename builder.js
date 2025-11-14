@@ -360,16 +360,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --------------------------
   function generatePortfolioHTML(data) {
     const body = renderTemplate(data);
-    const contact = `
-    <section class="m-8 p-6">
-    <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-4">Contact</h2>
-    <div class="flex flex-wrap gap-4">
-      ${data.phone ? `<a href="tel:+91${data.phone}" class="text-shadow-pink-400 hover:text-pink-400 transition">📞 Phone</a>` : ""}
-      ${data.email ? `<a href="mailto:${data.email}" class="text-shadow-pink-400 hover:text-pink-400 transition">📧 Email</a>` : ""}
-      ${data.linkedin ? `<a href="${data.linkedin}" class="text-shadow-pink-400 hover:text-pink-400 transition">💼 LinkedIn</a>` : ""}
-      ${data.github ? `<a href="${data.github}" class="text-shadow-pink-400 hover:text-pink-400 transition">🐙 GitHub</a>` : ""}
-    </div>`;
-
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -382,15 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body
-    class="text-white bg-linear-to-br from-indigo-600 via-purple-600 to-pink-500 font-[Poppins]"
-  >
-    <!-- Wrapper -->
-    <div id="portfolio">
-${body}
-${contact}
-</div>
-</body>
+  ${body}
 </html>`;
   }
 
@@ -436,6 +418,11 @@ ${contact}
       .join("");
 
     return `
+    <body
+    class="text-white bg-linear-to-br from-indigo-600 via-purple-600 to-pink-500 font-[Poppins]"
+  >
+    <!-- Wrapper -->
+    <div id="portfolio">
     <!-- Header Section -->
     <header class="h-screen flex items-center justify-center px-4">
         <div class="flex flex-col md:flex-row items-center gap-8 md:gap-40">
@@ -490,6 +477,19 @@ ${contact}
       <h2 class="text-2xl font-semibold pb-2 mb-4">Education</h2>
       <div class="flex flex-col md:flex-row justify-center gap-6 max-w-6xl mx-auto">${educations}</div>
     </section>
+    
+    <!-- Contact -->
+    <section class="m-8 p-6">
+      <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-4">Contact</h2>
+      <div class="flex flex-wrap gap-4">
+        ${data.phone ? `<a href="tel:+91${data.phone}" class="text-shadow-pink-400 hover:text-pink-400 transition">📞 Phone</a>` : ""}
+        ${data.email ? `<a href="mailto:${data.email}" class="text-shadow-pink-400 hover:text-pink-400 transition">📧 Email</a>` : ""}
+        ${data.linkedin ? `<a href="${data.linkedin}" class="text-shadow-pink-400 hover:text-pink-400 transition">💼 LinkedIn</a>` : ""}
+        ${data.github ? `<a href="${data.github}" class="text-shadow-pink-400 hover:text-pink-400 transition">🐙 GitHub</a>` : ""}
+      </div>
+    </section>
+  </div>
+</body>
         `;
   }
 
