@@ -440,7 +440,7 @@ ${contact}
     <header class="h-screen flex items-center justify-center px-4">
         <div class="flex flex-col md:flex-row items-center gap-8 md:gap-40">
           <!-- Left Side: Image -->
-      ${data.profileImage ? `<img src="${data.profileImage}" alt="Profile" class="w-50 h-50 sm:w-80 sm:h-80 rounded-full">` : "images/person.jpg"}
+      ${data.profileImage ? `<img src="${data.profileImage}" alt="Profile" class="w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 object-cover rounded-full">` : "images/person.jpg"}
       <!-- Right Side: Text -->
           <div
             class="flex flex-col items-center text-center md:items-start md:text-left"
@@ -464,7 +464,7 @@ ${contact}
           <div
             class="w-full md:w-1/2 flex justify-center md:justify-end pr-0 md:pr-10 z-10"
           >
-          <p class="text-gray-200 leading-relaxed text-center md:text-right max-w-md">${data.about}</p>
+          <p class="text-gray-200 leading-relaxed text-center md:text-center max-w-md">${data.about}</p>
           </div>
           <!-- Right: Image -->
           <div
