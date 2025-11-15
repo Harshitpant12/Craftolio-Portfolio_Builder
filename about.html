@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="/images/logosvg.svg" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>About Craftolio</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="font-['Inter'] bg-neutral-50">
+    <!-- navbar section -->
+    <nav
+      class="bg-slate-950 text-gray-200 p-4 md:p-6 flex items-center justify-between relative shadow-lg"
+    >
+      <!-- Logo -->
+      <div class="flex justify-between gap-0.5">
+        <img src="images/logo.png" class="w-10 h-10" alt="" />
+        <h1 class="text-2xl font-bold">Craftolio</h1>
+      </div>
+
+      <!-- Hamburger button (small screens) -->
+      <button
+        class="md:hidden text-gray-950 bg-white p-2 rounded focus:outline-none"
+        onclick="document.getElementById('mobileMenu').classList.remove('translate-x-full')"
+      >
+        <i class="fa fa-bars text-xl"></i>
+      </button>
+
+      <!-- Desktop Menu -->
+      <ul
+        class="hidden md:flex flex-row space-x-12 text-center [&_a]:text-slate-400 [&_a:hover]:text-orange-400"
+      >
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./builder.html">Get Started</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Side Panel Menu -->
+    <div
+      id="mobileMenu"
+      class="fixed top-0 right-0 w-2/5 sm:w-1/3 h-full bg-slate-900 text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden shadow-lg flex flex-col"
+    >
+      <!-- Close Button -->
+      <div
+        class="flex justify-between items-center p-4 border-b border-gray-700"
+      >
+        <h2 class="text-xl font-semibold">Menu</h2>
+        <button
+          class="text-gray-200 hover:text-orange-400 text-2xl"
+          onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')"
+        >
+          &times;
+        </button>
+      </div>
+
+      <!-- Menu Links -->
+      <ul
+        class="flex flex-col items-center gap-6 p-6 text-lg [&_a]:text-slate-300 [&_a:hover]:text-orange-400"
+      >
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="builder.html">Get Started</a></li>
+      </ul>
+    </div>
+    <!-- end of navbar section -->
+
+    <!-- hero section -->
+    <div
+      class="bg-linear-to-br from-orange-400 via-amber-300 to-yellow-200 text-neutral-900 flex flex-col md:flex-row w-full min-h-[280px] shadow-md p-4"
+    >
+      <!-- right side -->
+      <div class="w-full md:w-1/2 flex items-center justify-center">
+        <img
+          src="images/logo.png"
+          class="w-32 h-32 md:w-40 md:h-40 shadow-xl rounded-full border-4 border-white"
+          alt="Craftolio"
+        />
+      </div>
+      <!-- left side -->
+      <div
+        class="w-full md:w-1/2 flex flex-col p-10 items-center md:items-start justify-center"
+      >
+        <h2
+          class="font-semibold text-3xl md:text-4xl tracking-tight drop-shadow"
+        >
+          About Craftolio
+        </h2>
+        <p class="max-w-md mt-3 text-gray-800 text-lg">
+          Your portfolio, designed beautifully in minutes, no coding required.
+        </p>
+      </div>
+    </div>
+    <!-- end of hero section -->
+
+    <!-- about content -->
+    <div
+      id="content-wrapper"
+      class="max-w-[1000px] bg-white p-10 md:p-14 rounded-3xl shadow-[0_4px_30px_rgba(0,0,0,0.06)] border border-neutral-300/60 m-5 md:mx-auto mt-10 space-y-8"
+    >
+      <!-- What is Craftolio -->
+      <div>
+        <h4 class="text-2xl font-semibold text-gray-900 mb-2">
+          What is Craftolio?
+        </h4>
+        <div class="h-0.5 w-20 bg-orange-400 mb-4 rounded-full"></div>
+        <p class="text-gray-700 leading-relaxed">
+          Craftolio is a fast, beginner-friendly portfolio builder designed to
+          help students, developers, and creators build clean, professional
+          portfolios in minutes — without coding.
+        </p>
+      </div>
+
+      <!-- Why we built it -->
+      <div>
+        <h4 class="text-2xl font-semibold text-gray-900 mb-2">
+          Why we built it
+        </h4>
+        <div class="h-0.5 w-20 bg-orange-400 mb-4 rounded-full"></div>
+
+        <p class="text-gray-700">
+          Most people struggle to create a portfolio because:
+        </p>
+        <ul class="list-disc pl-5 mt-2 text-gray-700">
+          <li>coding takes time,</li>
+          <li>templates online are complicated,</li>
+          <li>file structure can be confusing,</li>
+          <li>and design isn't everyone's strength.</li>
+        </ul>
+
+        <p class="text-gray-700 mt-2 leading-relaxed">
+          Craftolio solves all of this with a simple idea:<br />
+          ➡️ Just enter your details, pick a template, and download your
+          portfolio instantly.
+        </p>
+      </div>
+
+      <!-- How it works -->
+      <div>
+        <h4 class="text-2xl font-semibold text-gray-900 mb-2">How it works</h4>
+        <div class="h-0.5 w-20 bg-orange-400 mb-4 rounded-full"></div>
+
+        <p class="text-gray-700 leading-relaxed">
+          Craftolio uses pre-designed responsive templates that auto-fill your
+          information live. Nothing gets stored on a server; everything happens
+          on your device. Once you're done, you simply download your portfolio
+          as a complete HTML or ZIP file.
+        </p>
+      </div>
+
+      <!-- What makes it different -->
+      <div>
+        <h4 class="text-2xl font-semibold text-gray-900 mb-2">
+          What makes Craftolio different
+        </h4>
+        <div class="h-0.5 w-20 bg-orange-400 mb-4 rounded-full"></div>
+
+        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+          <li>Zero coding required</li>
+          <li>Instant download</li>
+          <li>100% free to use</li>
+          <li>Fast, simple, and beginner-friendly</li>
+          <li>Designed templates that work everywhere</li>
+          <li>Full control — your data never stays with us</li>
+        </ul>
+      </div>
+
+      <!-- Our Goal -->
+      <div>
+        <h4 class="text-2xl font-semibold text-gray-900 mb-2">Our Goal</h4>
+        <div class="h-0.5 w-20 bg-orange-400 mb-4 rounded-full"></div>
+
+        <p class="text-gray-700 leading-relaxed">
+          We want to make portfolio creation effortless. Whether you're applying
+          for internships, jobs, hackathons, or freelancing opportunities,
+          Craftolio helps you present your work beautifully — in minutes, not
+          hours.
+        </p>
+      </div>
+    </div>
+    <!-- end of about content -->
+    <!-- footer -->
+    <footer
+      class="flex flex-col md:flex-row items-center justify-between m-4 md:m-5 p-5 md:p-8 text-lg gap-4 md:gap-0"
+    >
+      <div class="flex items-center justify-center gap-8 text-2xl">
+        <a href="https://github.com/Harshitpan12"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/harshit-pant-310587236/"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
+      <div class="text-center md:text-right">
+        <p>&copy; Harshit Pant, 2025. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- end of footer -->
+  </body>
+</html>
