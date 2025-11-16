@@ -76,11 +76,11 @@ Your data is never uploaded, stored, or shared. Everything remains on your devic
 ├─ style.css  
 ├─ images/..
 \
-├── about.html  
-├── package.json  
-├── package-lock.json  
-├── .gitignore  
-└── README.md
+├─ about.html  
+├─ package.json  
+├─ package-lock.json  
+├─ .gitignore  
+└─ README.md
 
 ---
 
