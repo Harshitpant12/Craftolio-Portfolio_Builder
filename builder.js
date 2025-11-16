@@ -1,11 +1,5 @@
-// ----------------------
-// Portfolio Builder Logic (Offline ZIP + /assets folder)
-// ----------------------
-
 document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("previewFrame");
-  // const exportBtn = document.getElementById("exportBtn");
-  // const downloadZipBtn = document.getElementById("downloadZipBtn");
   const templateSelect = document.getElementById("templateSelect");
 
   // Inputs
@@ -43,9 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     template: "modern",
   };
 
-  // --------------------------
-  // Load saved data
-  // --------------------------
+  // Load saved data in local storage
   const saved = localStorage.getItem("portfolioData");
   if (saved) {
     try {
@@ -57,9 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // --------------------------
   // Event Listeners
-  // --------------------------
   [
     nameInput,
     taglineInput,
@@ -85,10 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", handleDownloadZip)
   );
 
-
-  // --------------------------
   // Core Functions
-  // --------------------------
   function updateData() {
     portfolioData.name = nameInput.value.trim();
     portfolioData.tagline = taglineInput.value.trim();
@@ -248,9 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (portfolioData.educations || []).forEach((e) => addEducation(e));
   }
 
-  // --------------------------
   // EXPORT (HTML only)
-  // --------------------------
   async function handleExport() {
     const html = generatePortfolioHTML(portfolioData);
     const blob = new Blob([html], { type: "text/html" });
@@ -260,9 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
     a.click();
   }
 
-  // --------------------------
-  // DOWNLOAD ZIP (Offline-ready, /assets/)
-  // --------------------------
+  // DOWNLOAD ZIP (Offline-ready, /assets - with all images)
   async function handleDownloadZip() {
     const zip = new JSZip();
     const assets = zip.folder("assets");
@@ -355,9 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
     a.click();
   }
 
-  // --------------------------
   // HTML Generator
-  // --------------------------
   function generatePortfolioHTML(data) {
     const body = renderTemplate(data);
     return `
@@ -376,9 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </html>`;
   }
 
-  // --------------------------
-  // Templates
-  // --------------------------
+  // Rendering Templates
   function renderTemplate(data) {
     switch (data.template) {
       case "classic":
@@ -768,26 +747,5 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
 </body >
       `;
-    // const projects = (data.projects || [])
-    //   .map(
-    //     (p) => `
-    //   <div>
-    //     <h3 class="font-medium">${p.title}</h3>
-    //     <p class="text-sm">${p.description}</p>
-    //   </div>`
-    //   )
-    //   .join("");
-
-    // return `
-    // <body class="bg-linear-to-b from-neutral-50 to-neutral-100">
-    // <header class="text-center space-y-2">
-    //   ${data.profileImage ? `<img src="${data.profileImage}" class="w-24 h-24 rounded-full mx-auto object-cover border border-gray-300 shadow-sm">` : ""}
-    //   <h1 class="text-3xl font-bold">${data.name}</h1>
-    //   <p class="text-gray-500">${data.tagline}</p>
-    // </header>
-    // <p class="text-center max-w-lg mx-auto my-4">${data.about}</p>
-    // <div class="grid gap-3">${projects}</div>
-    // </body>`
-    // ;
   }
 });

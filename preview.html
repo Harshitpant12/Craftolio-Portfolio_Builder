@@ -14,7 +14,6 @@
   >
     <!-- Wrapper -->
     <div id="portfolio">
-      <!-- max-w-5xl mx-auto py-10 px-6 space-y-16 -->
       <!-- Header Section -->
 
       <header class="h-screen flex items-center justify-center px-4">
@@ -316,110 +315,110 @@
             document.body.className =
               "bg-linear-to-b from-neutral-50 to-neutral-400 font-[Outfit] text-gray-800";
             portfolio.innerHTML = `
-        <!-- HEADER (Classic Centered Layout) -->
-<header class="py-20 px-6 bg-[#f8f5ef] border-b border-[#d6c9b1]">
-  <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+        <!-- HEADER -->
+        <header class="py-20 px-6 bg-[#f8f5ef] border-b border-[#d6c9b1]">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
 
-    <!-- Image -->
-    ${
-      data.profileImage
-        ? `<img src="${data.profileImage}" class="w-40 h-40 rounded-full border-4 border-[#d6c9b1] shadow-sm mb-6 object-cover" />`
-        : `images/person.jpg`
-    }
+            <!-- Image -->
+            ${
+              data.profileImage
+                ? `<img src="${data.profileImage}" class="w-40 h-40 rounded-full border-4 border-[#d6c9b1] shadow-sm mb-6 object-cover" />`
+                : `images/person.jpg`
+            }
 
-    <!-- Name -->
-    <h1 class="text-4xl font-serif font-bold text-[#4a3f35] tracking-wide">
-      ${data.name}
-    </h1>
+            <!-- Name -->
+            <h1 class="text-4xl font-serif font-bold text-[#4a3f35] tracking-wide">
+              ${data.name}
+            </h1>
 
-    <!-- Tagline -->
-    <p class="text-lg text-[#6d6458] mt-2 font-light italic">
-      ${data.tagline}
-    </p>
+            <!-- Tagline -->
+            <p class="text-lg text-[#6d6458] mt-2 font-light italic">
+              ${data.tagline}
+            </p>
 
-  </div>
-</header>
-
-
-<!-- ABOUT SECTION (Classic Boxed Section) -->
-<section class="px-6 md:px-16 lg:px-28 py-14">
-  
-  <div class="bg-white border border-[#e0d8c8] rounded-xl p-10 shadow-sm max-w-4xl mx-auto">
-    <h2 class="text-3xl font-serif text-[#4a3f35] font-semibold mb-6 text-center">
-      About Me
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-10">
-
-      <!-- About Text -->
-      <div class="md:col-span-2">
-        <p class="text-[#5a5045] leading-relaxed text-lg">
-          ${data.about}
-        </p>
-      </div>
-
-      <!-- About Image -->
-      <div class="flex justify-center">
-        ${
-          data.aboutImage
-            ? `<img src="${data.aboutImage}" class="w-36 h-36 md:w-44 md:h-44 rounded-lg border border-[#d6c9b1] shadow-sm object-cover" />`
-            : `images/person.jpg`
-        }
-      </div>
-
-    </div>
-  </div>
-
-</section>
+          </div>
+        </header>
 
 
-<!-- SKILLS (Classic Centered Tags) -->
-<section class="px-6 md:px-16 lg:px-28 py-14 bg-[#fdfbf7] border-y border-[#e6dbc7]">
-  <h2 class="text-3xl font-serif text-[#4a3f35] font-semibold text-center mb-8">
-    Skills
-  </h2>
+        <!-- ABOUT SECTION -->
+        <section class="px-6 md:px-16 lg:px-28 py-14">
+          
+          <div class="bg-white border border-[#e0d8c8] rounded-xl p-10 shadow-sm max-w-4xl mx-auto">
+            <h2 class="text-3xl font-serif text-[#4a3f35] font-semibold mb-6 text-center">
+              About Me
+            </h2>
 
-  <ul id="previewSkills" class="flex flex-wrap justify-center gap-3"></ul>
-</section>
+            <div class="grid md:grid-cols-3 gap-10">
+
+              <!-- About Text -->
+              <div class="md:col-span-2">
+                <p class="text-[#5a5045] leading-relaxed text-lg">
+                  ${data.about}
+                </p>
+              </div>
+
+              <!-- About Image -->
+              <div class="flex justify-center">
+                ${
+                  data.aboutImage
+                    ? `<img src="${data.aboutImage}" class="w-36 h-36 md:w-44 md:h-44 rounded-lg border border-[#d6c9b1] shadow-sm object-cover" />`
+                    : `images/person.jpg`
+                }
+              </div>
+
+            </div>
+          </div>
+
+        </section>
 
 
-<!-- PROJECTS (Classic Card Layout) -->
-<section class="px-6 md:px-16 lg:px-28 py-14">
-  <h2 class="text-3xl font-serif text-[#4a3f35] font-semibold mb-10 text-center">
-    Projects
-  </h2>
+        <!-- SKILLS -->
+        <section class="px-6 md:px-16 lg:px-28 py-14 bg-[#fdfbf7] border-y border-[#e6dbc7]">
+          <h2 class="text-3xl font-serif text-[#4a3f35] font-semibold text-center mb-8">
+            Skills
+          </h2>
 
-  <div id="previewProjects" class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto"></div>
-</section>
-
-
-<!-- EDUCATION (Classic Timeline / Divider Style) -->
-<section class="px-6 md:px-16 lg:px-28 py-14 bg-[#faf7f2] border-y border-[#e0d8c8]">
-  <h2 class="text-3xl font-serif text-[#4a3f35] font-semibold mb-10 text-center">
-    Education
-  </h2>
-
-  <div id="previewEducations" class="space-y-8 max-w-3xl mx-auto relative">
-    <!-- JS cards go inside -->
-  </div>
-</section>
+          <ul id="previewSkills" class="flex flex-wrap justify-center gap-3"></ul>
+        </section>
 
 
-<!-- CONTACT (Classic Simple Bottom Section) -->
-<section class="px-6 md:px-16 lg:px-28 py-14">
-  <h2 class="text-3xl font-serif text-[#4a3f35] border-b border-[#d6c9b1] pb-2 mb-6 text-center">
-    Contact
-  </h2>
+        <!-- PROJECTS -->
+        <section class="px-6 md:px-16 lg:px-28 py-14">
+          <h2 class="text-3xl font-serif text-[#4a3f35] font-semibold mb-10 text-center">
+            Projects
+          </h2>
 
-  <div id="previewContact" class="flex flex-wrap justify-center gap-6 text-lg">
-    <a id="previewPhone" class="text-[#4a3f35] hover:text-black transition">📞 Phone</a>
-    <a id="previewEmail" class="text-[#4a3f35] hover:text-black transition">📧 Email</a>
-    <a id="previewLinkedin" class="text-[#4a3f35] hover:text-black transition">💼 LinkedIn</a>
-    <a id="previewGithub" class="text-[#4a3f35] hover:text-black transition">🐙 GitHub</a>
-  </div>
-</section>
+          <div id="previewProjects" class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto"></div>
+        </section>
 
-      `;
+
+        <!-- EDUCATION -->
+        <section class="px-6 md:px-16 lg:px-28 py-14 bg-[#faf7f2] border-y border-[#e0d8c8]">
+          <h2 class="text-3xl font-serif text-[#4a3f35] font-semibold mb-10 text-center">
+            Education
+          </h2>
+
+          <div id="previewEducations" class="space-y-8 max-w-3xl mx-auto relative">
+            <!-- JS cards go inside -->
+          </div>
+        </section>
+
+
+        <!-- CONTACT -->
+        <section class="px-6 md:px-16 lg:px-28 py-14">
+          <h2 class="text-3xl font-serif text-[#4a3f35] border-b border-[#d6c9b1] pb-2 mb-6 text-center">
+            Contact
+          </h2>
+
+          <div id="previewContact" class="flex flex-wrap justify-center gap-6 text-lg">
+            <a id="previewPhone" class="text-[#4a3f35] hover:text-black transition">📞 Phone</a>
+            <a id="previewEmail" class="text-[#4a3f35] hover:text-black transition">📧 Email</a>
+            <a id="previewLinkedin" class="text-[#4a3f35] hover:text-black transition">💼 LinkedIn</a>
+            <a id="previewGithub" class="text-[#4a3f35] hover:text-black transition">🐙 GitHub</a>
+          </div>
+        </section>
+
+              `;
             break;
           }
 
@@ -525,7 +524,7 @@
           }
         }
 
-        // ✅ Populate shared content dynamically
+        // Populate shared content dynamically
 
         // Skills
         const skillsContainer = document.getElementById("previewSkills");
@@ -660,7 +659,6 @@
                   }</p>
                 `;
                 break;
-              //add for classic and minimal as well
             }
 
             educationsContainer.appendChild(card);
